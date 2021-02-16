@@ -5,7 +5,10 @@
 x = 12
 
 def change_x():
-    x = 99
+   global x
+   x = 99
+   return x
+   
 
 change_x()
 
@@ -16,10 +19,13 @@ print(x)
 # This nested function has a similar problem.
 
 def outer():
+    global y
     y = 120
 
     def inner():
+        global y
         y = 999
+        return y
 
     inner()
 
